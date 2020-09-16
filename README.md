@@ -1,3 +1,3 @@
 # Pension-Guadalupe
-Sitio web para la pension de guadalupe
-##Work in progress
+Web site for La Pensión de Guadalupe
+## Work in progress
