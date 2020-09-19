@@ -8,3 +8,4 @@ funcion fetch para consultar nuestro api, parsear el json, y generar el html par
 las tarjetas de los lugares de estacionamiento. (por lo pronto las imagenes son iguales).
 
 
+La paleta del crustaceo cascarudo es para obviar la estructura y desarrollo del layout con flexbox.
