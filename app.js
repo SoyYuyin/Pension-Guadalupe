@@ -20,11 +20,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(morgan('dev'));
 
-lugares = [
-  {"lugar":"bodega", "descripcion":"400 m2, con baño y mas cosas"},
-  {"lugar":"Esta informacion", "descripcion":"viene de mi servidor de express"},
-  {"lugar":"local", "descripcion":"Sobre avenida principal, con bañoooooo"}
-]
+
 
 app.use(express.static('public'))
 
@@ -49,9 +45,15 @@ app.get('/', (req, res) => {
   // res.send('Hello worlddd')
   res.sendFile('/views/index.html', {root:__dirname});
   // res.sendFile(
-
 });
 
+lugares = [
+  {"lugar":"bodega", "descripcion":"400 m2, con baño y mas cosas"},
+  {"lugar":"Esta informacion", "descripcion":"viene de mi servidor de express"},
+  {"lugar":"local", "descripcion":"Sobre avenida principal, con bañoooooo"},
+  {"lugar":"local", "descripcion":"Sobre avenida principal, con bañoooooo"},
+  {"lugar":"local", "descripcion":"Sobre avenida principal, con bañoooooo"}
+]
 app.get('/lugares', (req, res) => {
   res.send(lugares)
 })
