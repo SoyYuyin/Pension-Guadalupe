@@ -24,6 +24,8 @@ app.use(morgan('dev'));
 
 app.use(express.static('public'))
 
+//ruta para probar base de datos
+
 app.get('/add-space', (req,res) =>{
   const space = new Space({
     space:'Lugar de estacionamiento, sin techo',
@@ -56,4 +58,9 @@ lugares = [
 ]
 app.get('/lugares', (req, res) => {
   res.send(lugares)
+})
+
+
+app.use((req, res) => {
+  res.sendFile('./views/404.html', {root:__dirname})
 })
