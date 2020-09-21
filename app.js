@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const authRoutes = require('./routes/authRoutes')
 
 const Space = require('./models/space');
 
@@ -8,8 +9,8 @@ const Space = require('./models/space');
 const app = express();
 
 // stablish connection to mongogb using mongoose
-const dbURI = 'mongodb+srv://soyyuyin:XwBVF0JRHMkUkYYf@soyyuyin.02szu.mongodb.net/pension?retryWrites=true&w=majority'
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+const dbURI = 'mongodb+srv://soyyuyin:XwBVF0JRHMkUkYYf@soyyuyin.02szu.mongodb.net/pension'
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 .then((result) => {app.listen(3000)}) //we start listening for connections only after the connection to the db is successful
 .catch((err) => console.log(err));
 
@@ -59,6 +60,10 @@ lugares = [
 app.get('/lugares', (req, res) => {
   res.send(lugares)
 })
+
+//routes
+app.use(authRoutes);
+
 
 
 app.use((req, res) => {

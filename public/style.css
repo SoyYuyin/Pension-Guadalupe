@@ -1,0 +1,142 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+h1,h2,h3,h4,h5{
+  font-family: 'Cabin', sans-serif;
+}
+
+header{
+  background-color: lightskyblue;
+  margin-bottom: 1.5rem;
+  display:flex;
+  flex-direction: column;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  max-width: 1028px;
+  margin: auto;
+  padding: 2rem;
+  background-color: lightgray;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(100, 100, 100, 0.438) ;
+  flex-wrap: wrap;
+}
+
+nav ul{
+  display: flex;
+  flex-grow: 1;
+  background-color: lightcoral;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  list-style: none;
+  
+  
+}
+
+nav ul li a{
+  padding: 1rem;
+  text-decoration: none;
+  background-color: white;
+  
+}
+
+nav ul li:nth-child(1){
+  background-color:violet;
+  margin-left: auto;
+}
+
+nav ul li:nth-child(3) {
+  background-color: lightcyan;
+  margin-left: auto;
+}
+
+h1{
+ background-color: lightsteelblue;
+ margin: 0 auto;
+}
+
+.lugares{
+  /* display: flex; */
+  background-color: rgb(173, 107, 46);
+  margin-bottom: 1rem;
+}
+
+
+.content {
+  max-width: 1028px;
+  margin: 0 auto;
+  background-color: lightpink;
+
+}
+
+.content article {
+  background-color: lightseagreen;
+}
+
+.cards-preview{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card{
+  background-color: lightgoldenrodyellow;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  
+}
+.card p , .card h3{
+  margin: 1rem ;
+}
+.card img{
+  object-fit: contain;
+  height: 200px;
+}
+
+.card a{
+  color: white;
+  background-color: darkslategray;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  transition: transform .15s;
+  
+  
+}
+
+.card a:hover{
+  color: white;
+  background-color: rgb(62, 104, 104);
+  transform:scale(1.05);
+  cursor: pointer;
+}
+
+footer{
+  display: flex;
+  background-color: darkturquoise;
+  margin: auto;
+}
+
+footer div{
+  background-color: darkolivegreen;
+  max-width: 1028px;
+  display:flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  flex-grow: 1;
+  padding: 1rem 0;
+
+}
