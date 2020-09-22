@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes')
+require('dotenv').config();
 
 const Space = require('./models/space');
 
@@ -9,8 +10,7 @@ const Space = require('./models/space');
 const app = express();
 
 // stablish connection to mongogb using mongoose
-const dbURI = 'mongodb+srv://soyyuyin:XwBVF0JRHMkUkYYf@soyyuyin.02szu.mongodb.net/pension'
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(process.env.DBURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 .then((result) => {app.listen(3000)}) //we start listening for connections only after the connection to the db is successful
 .catch((err) => console.log(err));
 
