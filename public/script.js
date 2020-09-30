@@ -1,17 +1,18 @@
 
 
-function getlugares(){
-  fetch('http://localhost:3000/lugares')
+function getSpaces(){
+  fetch('http://localhost:3000/spaces')
   .then((res) => res.json())
-  .then((lugares)=> {
-    console.log(lugares);
+  .then((spaces)=> {
+    console.log(spaces);
     let output='';
-    lugares.forEach((lugar) =>{
+    spaces.forEach((space) =>{
       output += `
       <div class='card'> 
         <img src="bob.png" alt="foto del espacio" />
-        <h3>${lugar.lugar}</h3>
-        <p>${lugar.descripcion}</p>
+        <h3>${space.space}</h3>
+        <p>${space.details}</p>
+        <p><strong>$${space.price}.00</strong></p>
         <a href='/signup'>Rentar</a>
       </div>`})
     document.querySelector('.cards-preview').innerHTML = output;
@@ -21,5 +22,5 @@ function getlugares(){
   })
 }
 
-getlugares();
+getSpaces();
 

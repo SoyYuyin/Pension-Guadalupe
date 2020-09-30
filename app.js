@@ -1,10 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const authRoutes = require('./routes/authRoutes')
-require('dotenv').config();
+const authRoutes = require('./routes/authRoutes');
+const spacesRoutes = require('./routes/spacesRoutes');
 
-const Space = require('./models/space');
+require('dotenv').config();
 
 //create express app
 const app = express();
@@ -22,26 +22,7 @@ mongoose.connect(process.env.DBURI, { useNewUrlParser: true, useUnifiedTopology:
 app.use(morgan('dev'));
 
 
-
-app.use(express.static('public'))
-
-//ruta para probar base de datos
-
-app.get('/add-space', (req,res) =>{
-  const space = new Space({
-    space:'Lugar de estacionamiento, sin techo',
-    details: 'Dentro de la pensión con guardia de seguridad',
-    availability: true
-  });
-
-  space.save() //this is asynchronous
-    .then((result)=> {
-      res.send(result)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-});
+app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
@@ -50,19 +31,10 @@ app.get('/', (req, res) => {
   // res.sendFile(
 });
 
-lugares = [
-  {"lugar":"bodega", "descripcion":"400 m2, con baño y mas cosas"},
-  {"lugar":"Esta informacion", "descripcion":"viene de mi servidor de express"},
-  {"lugar":"local", "descripcion":"Sobre avenida principal, con bañoooooo"},
-  {"lugar":"local", "descripcion":"Sobre avenida principal, con bañoooooo"},
-  {"lugar":"local", "descripcion":"Sobre avenida principal, con bañoooooo"}
-]
-app.get('/lugares', (req, res) => {
-  res.send(lugares)
-})
 
 //routes
-app.use(authRoutes);
+app.use(spacesRoutes); //get spaces, add spaces
+app.use(authRoutes); // get signup form page, post signup info, get login page, post signup info
 
 
 

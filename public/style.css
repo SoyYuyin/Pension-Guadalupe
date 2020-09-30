@@ -43,7 +43,7 @@ nav ul li {
 }
 
 nav ul li a{
-  padding: 1rem;
+  /* padding: 1rem; */
   text-decoration: none;
   background-color: white;
   
@@ -139,4 +139,9 @@ footer div{
   flex-grow: 1;
   padding: 1rem 0;
 
+}
+
+.bob img {
+  height: 100px;
+  width: 100px;
 }
